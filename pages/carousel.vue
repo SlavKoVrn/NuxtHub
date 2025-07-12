@@ -1,6 +1,6 @@
 <template>
   <div class="container mt-5">
-    <h1>My Bootstrap 5 Carousel in Nuxt 3</h1>
+    <h1>Bootstrap 5 Carousel</h1>
     <CarouselComponent :slides="slides" />
   </div>
 </template>

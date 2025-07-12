@@ -33,6 +33,12 @@ const sorting = ref([
 // Fetch data from server
 const fetchData = async () => {
   loading.value = true
+
+  const overlay = document.getElementById('overlay')
+  if (overlay) {
+    overlay.style.display = 'block'
+  }
+
   const page = pagination.value.pageIndex + 1 // Server uses 1-based index
   const perPage = pagination.value.pageSize
   const sortParam = (sorting.value[0].desc ? `-` : ``) + sorting.value[0].id
@@ -54,6 +60,9 @@ const fetchData = async () => {
     data.value = []
   } finally {
     loading.value = false
+    if (overlay) {
+      overlay.style.display = 'none'
+    }
   }
 }
 
